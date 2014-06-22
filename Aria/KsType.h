@@ -22,11 +22,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  * 
- * @file	KsType.h
- * @brief	ƒ^ƒCƒv’è‹`
- * @date	2014/04/12
- * @author	A567W
- * @version	1.0.0
+ * @file    KsType.h
+ * @brief   ƒ^ƒCƒv’è‹`
+ * @date    2014/04/12
+ * @author  A567W
+ * @version 1.0.0
  */
  /************************************************************************************************/
 #ifndef __KSTYPE_H__
@@ -44,40 +44,23 @@
 #define ksFALSE                 ( 0 )							/**< ‹U						*/
 
 /* ®”Œ^ Å‘å’l/Å¬’l */
-#define KsInt8MAXVAL            ( 0x7F )						/**< max value  127			*/
-#define KsInt8MINVAL            ( 0x80 )						/**< min value -128			*/
-#define KsUInt8MAXVAL           ( 0xFF )						/**< max value  256			*/
-#define KsUInt8MINVAL           ( 0x00 )						/**< min value    0			*/
-#define KsInt16MAXVAL           ( 0x7FFF )						/**< */
-#define KsInt16MINVAL           ( 0x8000 )						/**< */
-#define KsUInt16MAXVAL          ( 0xFFFF )						/**< */
-#define KsUInt16MINVAL          ( 0x0000 )						/**< */
-#define KsInt32MAXVAL           ( 0x7FFFFFFF )					/**< */
-#define KsInt32MINVAL           ( 0x80000000 )					/**< */
-#define KsUInt32MAXVAL          ( 0xFFFFFFFF )					/**< */
-#define KsUInt32MINVAL          ( 0x00000000 )					/**< */
+#define KsInt8MAXVAL            ( 0x7F )						/**< max value         127          */
+#define KsInt8MINVAL            ( 0x80 )						/**< min value        -128          */
+#define KsUInt8MAXVAL           ( 0xFF )						/**< max value         256          */
+#define KsUInt8MINVAL           ( 0x00 )						/**< min value           0          */
+#define KsInt16MAXVAL           ( 0x7FFF )						/**< max value       32767          */
+#define KsInt16MINVAL           ( 0x8000 )						/**< min value      -32768          */
+#define KsUInt16MAXVAL          ( 0xFFFF )						/**< max value       65535          */
+#define KsUInt16MINVAL          ( 0x0000 )						/**< min value           0          */
+#define KsInt32MAXVAL           ( 0x7FFFFFFF )					/**< max value  2147483647          */
+#define KsInt32MINVAL           ( 0x80000000 )					/**< min value -2147483648          */
+#define KsUInt32MAXVAL          ( 0xFFFFFFFF )					/**< max value  4294967295          */
+#define KsUInt32MINVAL          ( 0x00000000 )					/**< min value           0          */
 /* •‚“®­”Œ^ Å‘å’l/Å¬’l */
-#define KsRealMAXVAL            ( 0x7f7fc99e )					/**<  3.4 * 10^38					*/
-#define KsRealMINVAL            ( 0xff7fc99e )					/**< -3.4 * 10^38					*/
-#define ksFLOAT32_MAX           ( 3.402823466e+38f )
-#define ksFLOAT32_MIN           (-3.402823466e+38f )
+#define ksFLOAT32_MAX           ( 3.402823466e+38F )            /**< max value  3.402823466e+38F    */
+#define ksFLOAT32_MIN           ( 1.175494351e-38F )            /**< min value  1.175494351e-38F    */
 
-#define ksFLT_DIG               6								/* # of decimal digits of precision */
-#define ksFLT_EPSILON           1.192092896e-07F				/* smallest such that 1.0+FLT_EPSILON != 1.0 */
-#define ksFLT_GUARD             0
-#define ksFLT_MANT_DIG          24								/* # of bits in mantissa */
-#define ksFLT_MAX               3.402823466e+38F				/* max value */
-#define ksFLT_MAX_10_EXP        38								/* max decimal exponent */
-#define ksFLT_MAX_EXP           128								/* max binary exponent */
-#define ksFLT_MIN               1.175494351e-38F				/* min positive value */
-#define ksFLT_MIN_10_EXP        (-37)							/**< min decimal exponent */
-#define ksFLT_MIN_EXP           (-125)							/**< min binary exponent */
-#define ksFLT_NORMALIZE         0
-#define ksFLT_RADIX             2								/**< exponent radix */
-#define ksFLT_ROUNDS            1								/**< addition rounding: near */
-
-#define ksALIGNED_CLASS16(a)    __declspec(align(16)) a
-#define ksATTRIBUTE_ALIGN16     __declspec(align(16))
+#define ksALIGN_BEGIN(a)        __declspec(align(a))
 
 #define ksALIGN2(x)             (((x)+ 1) & ~1)					/**<  2 bytes alignment				*/
 #define ksALIGN4(x)             (((x)+ 3) & ~3)					/**<  4 bytes alignment				*/
@@ -146,7 +129,7 @@ typedef unsigned long long		KsUInt64;						/**< 64 ƒrƒbƒg‚Ì•„†‚È‚µ®”			*/
 
 #define KsFloor(_x)             s_cast<KsReal>(s_cast<KsInt32>(_x))
 
-#define ksPI					(3.14159265358979323846264338f)	/**< ‰~Žü—¦(ƒÎ)						*/
+#define ksPI                    (3.14159265358979323846264338f)	/**< ‰~Žü—¦(ƒÎ)						*/
 #define ksHALF_PI				(1.57079632679489661923132169f)	/**< ‰~Žü—¦(ƒÎ/‚Q)						*/
 #define ksTWO_PI				(6.28318530717958647692528676f)	/**< ‰~Žü—¦(‚QƒÎ)						*/
 #define ksTOLERANCE				(0.0001f)						/**< ‘Å‚¿Ø‚èŒë·						*/
