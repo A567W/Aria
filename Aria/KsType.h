@@ -28,7 +28,7 @@
  * @author  A567W
  * @version 1.0.0
  */
- /************************************************************************************************/
+/************************************************************************************************/
 #ifndef __KSTYPE_H__
 #define __KSTYPE_H__
 
@@ -57,8 +57,8 @@
 #define KsUInt32MAXVAL          ( 0xFFFFFFFF )					/**< max value  4294967295          */
 #define KsUInt32MINVAL          ( 0x00000000 )					/**< min value           0          */
 /* •‚“®­”Œ^ Å‘å’l/Å¬’l */
-#define ksFLOAT32_MAX           ( 3.402823466e+38F )            /**< max value  3.402823466e+38F    */
-#define ksFLOAT32_MIN           ( 1.175494351e-38F )            /**< min value  1.175494351e-38F    */
+#define ksREAL_MAX              ( 3.402823466e+38F )            /**< max value  3.402823466e+38F    */
+#define ksREAL_MIN              ( 1.175494351e-38F )            /**< min value  1.175494351e-38F    */
 
 #define ksALIGN_BEGIN(a)        __declspec(align(a))
 

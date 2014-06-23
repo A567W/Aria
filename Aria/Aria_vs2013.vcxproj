@@ -10,6 +10,46 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KsAria.h" />
+    <ClInclude Include="KsBase.h" />
+    <ClInclude Include="KsConfig.h" />
+    <ClInclude Include="KsMacro.h" />
+    <ClInclude Include="KsPlatform.h" />
+    <ClInclude Include="KsType.h" />
+    <ClInclude Include="KsVersion.h" />
+    <ClInclude Include="math\KsMath.h" />
+    <ClInclude Include="math\KsMathBase.h" />
+    <ClInclude Include="math\KsMatrix.h" />
+    <ClInclude Include="math\KsMatrix3x3.h" />
+    <ClInclude Include="math\KsMatrix4x4.h" />
+    <ClInclude Include="math\KsPlane.h" />
+    <ClInclude Include="math\KsQuaternion.h" />
+    <ClInclude Include="math\KsTransform.h" />
+    <ClInclude Include="math\KsVector.h" />
+    <ClInclude Include="math\KsVector2d.h" />
+    <ClInclude Include="math\KsVector3d.h" />
+    <ClInclude Include="math\KsVector4d.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="math\KsMatrix3x3.cpp" />
+    <ClCompile Include="math\KsMatrix4x4.cpp" />
+    <ClCompile Include="math\KsQuaternion.cpp" />
+    <ClCompile Include="math\KsTransform.cpp" />
+    <ClCompile Include="math\KsVector2d.cpp" />
+    <ClCompile Include="math\KsVector3d.cpp" />
+    <ClCompile Include="math\KsVector4d.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="math\KsMatrix3x3.inl" />
+    <None Include="math\KsMatrix4x4.inl" />
+    <None Include="math\KsPlane.inl" />
+    <None Include="math\KsQuaternion.inl" />
+    <None Include="math\KsTransform.inl" />
+    <None Include="math\KsVector2d.inl" />
+    <None Include="math\KsVector3d.inl" />
+    <None Include="math\KsVector4d.inl" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9822463F-4AEE-499A-86E9-9E65B4876985}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -47,6 +87,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\GitHub\Aria\Aria;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

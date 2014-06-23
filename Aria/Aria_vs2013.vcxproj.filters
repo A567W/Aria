@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Aria">
+      <UniqueIdentifier>{45d29e39-0616-4bbe-85bf-5038091459fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aria\core">
+      <UniqueIdentifier>{381c1c87-361e-4019-bf18-e1edd99bdb67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aria\task">
+      <UniqueIdentifier>{1260769f-0c43-4546-b725-42a716cbc389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aria\thread">
+      <UniqueIdentifier>{5f1934ef-a745-4e7f-93e7-e700cc607be2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aria\math">
+      <UniqueIdentifier>{8098ae76-4b6c-44e5-adef-8da4517acd34}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="KsBase.h">
+      <Filter>Aria</Filter>
+    </ClInclude>
+    <ClInclude Include="KsConfig.h">
+      <Filter>Aria</Filter>
+    </ClInclude>
+    <ClInclude Include="KsMacro.h">
+      <Filter>Aria</Filter>
+    </ClInclude>
+    <ClInclude Include="KsPlatform.h">
+      <Filter>Aria</Filter>
+    </ClInclude>
+    <ClInclude Include="KsType.h">
+      <Filter>Aria</Filter>
+    </ClInclude>
+    <ClInclude Include="KsVersion.h">
+      <Filter>Aria</Filter>
+    </ClInclude>
+    <ClInclude Include="KsAria.h">
+      <Filter>Aria</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsMath.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsMatrix.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsMatrix3x3.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsMatrix4x4.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsPlane.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsQuaternion.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsVector.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsVector2d.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsVector3d.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsVector4d.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsTransform.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsMathBase.h">
+      <Filter>Aria\math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="math\KsMatrix3x3.cpp">
+      <Filter>Aria\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\KsMatrix4x4.cpp">
+      <Filter>Aria\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\KsQuaternion.cpp">
+      <Filter>Aria\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\KsVector2d.cpp">
+      <Filter>Aria\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\KsVector3d.cpp">
+      <Filter>Aria\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\KsVector4d.cpp">
+      <Filter>Aria\math</Filter>
+    </ClCompile>
+    <ClCompile Include="math\KsTransform.cpp">
+      <Filter>Aria\math</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="math\KsMatrix3x3.inl">
+      <Filter>Aria\math</Filter>
+    </None>
+    <None Include="math\KsMatrix4x4.inl">
+      <Filter>Aria\math</Filter>
+    </None>
+    <None Include="math\KsPlane.inl">
+      <Filter>Aria\math</Filter>
+    </None>
+    <None Include="math\KsQuaternion.inl">
+      <Filter>Aria\math</Filter>
+    </None>
+    <None Include="math\KsVector2d.inl">
+      <Filter>Aria\math</Filter>
+    </None>
+    <None Include="math\KsVector3d.inl">
+      <Filter>Aria\math</Filter>
+    </None>
+    <None Include="math\KsVector4d.inl">
+      <Filter>Aria\math</Filter>
+    </None>
+    <None Include="math\KsTransform.inl">
+      <Filter>Aria\math</Filter>
+    </None>
+  </ItemGroup>
+</Project>
