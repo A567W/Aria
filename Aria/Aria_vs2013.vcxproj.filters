@@ -16,6 +16,15 @@
     <Filter Include="Aria\math">
       <UniqueIdentifier>{8098ae76-4b6c-44e5-adef-8da4517acd34}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Aria\file">
+      <UniqueIdentifier>{89effc48-dae3-4cd4-93c6-f7a96ea172d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aria\graphics">
+      <UniqueIdentifier>{a877c658-8a19-47af-9092-6f2b543a7747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aria\memory">
+      <UniqueIdentifier>{3d607b16-040b-45e1-82fd-dd82dabd763c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KsBase.h">
@@ -72,8 +81,245 @@
     <ClInclude Include="math\KsTransform.h">
       <Filter>Aria\math</Filter>
     </ClInclude>
-    <ClInclude Include="math\KsMathBase.h">
+    <ClInclude Include="thread\KsThread.h">
+      <Filter>Aria\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsCore.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsCoreCommon.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="math\KsMathCommon.h">
       <Filter>Aria\math</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsBezier.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsCrc32.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsHash.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsList.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsMD5.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsQueue.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsRefCounter.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsRingBuffer.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsSingleton.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsStack.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsString.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsArray.h">
+      <Filter>Aria\core</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsDrawThreadManager.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsTask.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsTaskManager.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsUpdate.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsUpdateList.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsUpdateThread.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsUpdateThreadManager.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsDraw.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsDrawList.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsDrawThread.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="task\KsTaskCommon.h">
+      <Filter>Aria\task</Filter>
+    </ClInclude>
+    <ClInclude Include="thread\KsThreadCommon.h">
+      <Filter>Aria\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsSamplerState.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsShaderData.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsShaderManager.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsShaderParam.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsShaderProgram.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsShaderResource.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsShaderType.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsStructuredBuffer.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsTexture.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsTextureCollection.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsTextureManager.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsUnorderedAccessView.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsVertexBuffer.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsVertexDeclaration.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsVertexShader.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsViewport.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsBlendState.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsBufferObject.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsCamera.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsCameraManager.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsCameraObject.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsColor.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsColorReal.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsComputeShader.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsConstantBuffer.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsDepthStencilState.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsEffect.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsEffectCollection.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsFrustum.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsGeometryShader.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsGIFormat.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsHardwareBufferManager.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsImage.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsIndexBuffer.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsInputLayout.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsInputLayoutManager.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsPixelShader.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsRasterizerState.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsRect.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsRenderCommandList.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsRenderContext.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsRenderSystem.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsRenderTarget.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsRenderTargetTexture.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsRenderType.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\KsMemoryFixed.h">
+      <Filter>Aria\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\KsMemoryFixedBlock.h">
+      <Filter>Aria\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\KsMemoryFixedUnit.h">
+      <Filter>Aria\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\KsMemory.h">
+      <Filter>Aria\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="memory\KsMemoryCommon.h">
+      <Filter>Aria\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="graphics\KsGraphicsCommon.h">
+      <Filter>Aria\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="core\KsRandom.h">
+      <Filter>Aria\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +343,159 @@
     </ClCompile>
     <ClCompile Include="math\KsTransform.cpp">
       <Filter>Aria\math</Filter>
+    </ClCompile>
+    <ClCompile Include="core\KsCrc32.cpp">
+      <Filter>Aria\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\KsMD5.cpp">
+      <Filter>Aria\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\KsSingleton.cpp">
+      <Filter>Aria\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\KsString.cpp">
+      <Filter>Aria\core</Filter>
+    </ClCompile>
+    <ClCompile Include="core\KsBezier.cpp">
+      <Filter>Aria\core</Filter>
+    </ClCompile>
+    <ClCompile Include="task\KsTask.cpp">
+      <Filter>Aria\task</Filter>
+    </ClCompile>
+    <ClCompile Include="task\KsTaskManager.cpp">
+      <Filter>Aria\task</Filter>
+    </ClCompile>
+    <ClCompile Include="task\KsUpdate.cpp">
+      <Filter>Aria\task</Filter>
+    </ClCompile>
+    <ClCompile Include="task\KsUpdateList.cpp">
+      <Filter>Aria\task</Filter>
+    </ClCompile>
+    <ClCompile Include="task\KsUpdateThread.cpp">
+      <Filter>Aria\task</Filter>
+    </ClCompile>
+    <ClCompile Include="task\KsUpdateThreadManager.cpp">
+      <Filter>Aria\task</Filter>
+    </ClCompile>
+    <ClCompile Include="task\KsDraw.cpp">
+      <Filter>Aria\task</Filter>
+    </ClCompile>
+    <ClCompile Include="task\KsDrawList.cpp">
+      <Filter>Aria\task</Filter>
+    </ClCompile>
+    <ClCompile Include="task\KsDrawThread.cpp">
+      <Filter>Aria\task</Filter>
+    </ClCompile>
+    <ClCompile Include="task\KsDrawThreadManager.cpp">
+      <Filter>Aria\task</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsSamplerState.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsShaderData.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsShaderManager.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsShaderProgram.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsShaderResource.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsStructuredBuffer.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsTexture.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsTextureCollection.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsTextureManager.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsUnorderedAccessView.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsVertexBuffer.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsVertexShader.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsBlendState.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsBufferObject.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsCamera.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsCameraManager.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsColor.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsColorReal.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsComputeShader.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsConstantBuffer.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsDepthStencilState.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsEffect.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsEffectCollection.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsFrustum.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsGeometryShader.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsHardwareBufferManager.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsImage.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsIndexBuffer.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsInputLayout.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsInputLayoutManager.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsPixelShader.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsRasterizerState.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="graphics\KsRenderSystem.cpp">
+      <Filter>Aria\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\KsMemoryFixedBlock.cpp">
+      <Filter>Aria\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="memory\KsMemoryFixed.cpp">
+      <Filter>Aria\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="core\KsRandom.cpp">
+      <Filter>Aria\core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +522,9 @@
     </None>
     <None Include="math\KsTransform.inl">
       <Filter>Aria\math</Filter>
+    </None>
+    <None Include="graphics\KsRect.inl">
+      <Filter>Aria\graphics</Filter>
     </None>
   </ItemGroup>
 </Project>

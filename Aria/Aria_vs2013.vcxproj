@@ -11,6 +11,67 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="core\KsArray.h" />
+    <ClInclude Include="core\KsBezier.h" />
+    <ClInclude Include="core\KsCore.h" />
+    <ClInclude Include="core\KsCoreCommon.h" />
+    <ClInclude Include="core\KsCrc32.h" />
+    <ClInclude Include="core\KsHash.h" />
+    <ClInclude Include="core\KsList.h" />
+    <ClInclude Include="core\KsMD5.h" />
+    <ClInclude Include="core\KsQueue.h" />
+    <ClInclude Include="core\KsRandom.h" />
+    <ClInclude Include="core\KsRefCounter.h" />
+    <ClInclude Include="core\KsRingBuffer.h" />
+    <ClInclude Include="core\KsSingleton.h" />
+    <ClInclude Include="core\KsStack.h" />
+    <ClInclude Include="core\KsString.h" />
+    <ClInclude Include="graphics\KsBlendState.h" />
+    <ClInclude Include="graphics\KsBufferObject.h" />
+    <ClInclude Include="graphics\KsCamera.h" />
+    <ClInclude Include="graphics\KsCameraManager.h" />
+    <ClInclude Include="graphics\KsCameraObject.h" />
+    <ClInclude Include="graphics\KsColor.h" />
+    <ClInclude Include="graphics\KsColorReal.h" />
+    <ClInclude Include="graphics\KsComputeShader.h" />
+    <ClInclude Include="graphics\KsConstantBuffer.h" />
+    <ClInclude Include="graphics\KsDepthStencilState.h" />
+    <ClInclude Include="graphics\KsEffect.h" />
+    <ClInclude Include="graphics\KsEffectCollection.h" />
+    <ClInclude Include="graphics\KsFrustum.h" />
+    <ClInclude Include="graphics\KsGeometryShader.h" />
+    <ClInclude Include="graphics\KsGIFormat.h" />
+    <ClInclude Include="graphics\KsGraphicsCommon.h" />
+    <ClInclude Include="graphics\KsHardwareBufferManager.h" />
+    <ClInclude Include="graphics\KsImage.h" />
+    <ClInclude Include="graphics\KsIndexBuffer.h" />
+    <ClInclude Include="graphics\KsInputLayout.h" />
+    <ClInclude Include="graphics\KsInputLayoutManager.h" />
+    <ClInclude Include="graphics\KsPixelShader.h" />
+    <ClInclude Include="graphics\KsRasterizerState.h" />
+    <ClInclude Include="graphics\KsRect.h" />
+    <ClInclude Include="graphics\KsRenderCommandList.h" />
+    <ClInclude Include="graphics\KsRenderContext.h" />
+    <ClInclude Include="graphics\KsRenderSystem.h" />
+    <ClInclude Include="graphics\KsRenderTarget.h" />
+    <ClInclude Include="graphics\KsRenderTargetTexture.h" />
+    <ClInclude Include="graphics\KsRenderType.h" />
+    <ClInclude Include="graphics\KsSamplerState.h" />
+    <ClInclude Include="graphics\KsShaderData.h" />
+    <ClInclude Include="graphics\KsShaderManager.h" />
+    <ClInclude Include="graphics\KsShaderParam.h" />
+    <ClInclude Include="graphics\KsShaderProgram.h" />
+    <ClInclude Include="graphics\KsShaderResource.h" />
+    <ClInclude Include="graphics\KsShaderType.h" />
+    <ClInclude Include="graphics\KsStructuredBuffer.h" />
+    <ClInclude Include="graphics\KsTexture.h" />
+    <ClInclude Include="graphics\KsTextureCollection.h" />
+    <ClInclude Include="graphics\KsTextureManager.h" />
+    <ClInclude Include="graphics\KsUnorderedAccessView.h" />
+    <ClInclude Include="graphics\KsVertexBuffer.h" />
+    <ClInclude Include="graphics\KsVertexDeclaration.h" />
+    <ClInclude Include="graphics\KsVertexShader.h" />
+    <ClInclude Include="graphics\KsViewport.h" />
     <ClInclude Include="KsAria.h" />
     <ClInclude Include="KsBase.h" />
     <ClInclude Include="KsConfig.h" />
@@ -19,7 +80,7 @@
     <ClInclude Include="KsType.h" />
     <ClInclude Include="KsVersion.h" />
     <ClInclude Include="math\KsMath.h" />
-    <ClInclude Include="math\KsMathBase.h" />
+    <ClInclude Include="math\KsMathCommon.h" />
     <ClInclude Include="math\KsMatrix.h" />
     <ClInclude Include="math\KsMatrix3x3.h" />
     <ClInclude Include="math\KsMatrix4x4.h" />
@@ -30,8 +91,65 @@
     <ClInclude Include="math\KsVector2d.h" />
     <ClInclude Include="math\KsVector3d.h" />
     <ClInclude Include="math\KsVector4d.h" />
+    <ClInclude Include="memory\KsMemory.h" />
+    <ClInclude Include="memory\KsMemoryCommon.h" />
+    <ClInclude Include="memory\KsMemoryFixed.h" />
+    <ClInclude Include="memory\KsMemoryFixedBlock.h" />
+    <ClInclude Include="memory\KsMemoryFixedUnit.h" />
+    <ClInclude Include="task\KsDraw.h" />
+    <ClInclude Include="task\KsDrawList.h" />
+    <ClInclude Include="task\KsDrawThread.h" />
+    <ClInclude Include="task\KsDrawThreadManager.h" />
+    <ClInclude Include="task\KsTask.h" />
+    <ClInclude Include="task\KsTaskCommon.h" />
+    <ClInclude Include="task\KsTaskManager.h" />
+    <ClInclude Include="task\KsUpdate.h" />
+    <ClInclude Include="task\KsUpdateList.h" />
+    <ClInclude Include="task\KsUpdateThread.h" />
+    <ClInclude Include="task\KsUpdateThreadManager.h" />
+    <ClInclude Include="thread\KsThread.h" />
+    <ClInclude Include="thread\KsThreadCommon.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="core\KsBezier.cpp" />
+    <ClCompile Include="core\KsCrc32.cpp" />
+    <ClCompile Include="core\KsMD5.cpp" />
+    <ClCompile Include="core\KsRandom.cpp" />
+    <ClCompile Include="core\KsSingleton.cpp" />
+    <ClCompile Include="core\KsString.cpp" />
+    <ClCompile Include="graphics\KsBlendState.cpp" />
+    <ClCompile Include="graphics\KsBufferObject.cpp" />
+    <ClCompile Include="graphics\KsCamera.cpp" />
+    <ClCompile Include="graphics\KsCameraManager.cpp" />
+    <ClCompile Include="graphics\KsColor.cpp" />
+    <ClCompile Include="graphics\KsColorReal.cpp" />
+    <ClCompile Include="graphics\KsComputeShader.cpp" />
+    <ClCompile Include="graphics\KsConstantBuffer.cpp" />
+    <ClCompile Include="graphics\KsDepthStencilState.cpp" />
+    <ClCompile Include="graphics\KsEffect.cpp" />
+    <ClCompile Include="graphics\KsEffectCollection.cpp" />
+    <ClCompile Include="graphics\KsFrustum.cpp" />
+    <ClCompile Include="graphics\KsGeometryShader.cpp" />
+    <ClCompile Include="graphics\KsHardwareBufferManager.cpp" />
+    <ClCompile Include="graphics\KsImage.cpp" />
+    <ClCompile Include="graphics\KsIndexBuffer.cpp" />
+    <ClCompile Include="graphics\KsInputLayout.cpp" />
+    <ClCompile Include="graphics\KsInputLayoutManager.cpp" />
+    <ClCompile Include="graphics\KsPixelShader.cpp" />
+    <ClCompile Include="graphics\KsRasterizerState.cpp" />
+    <ClCompile Include="graphics\KsRenderSystem.cpp" />
+    <ClCompile Include="graphics\KsSamplerState.cpp" />
+    <ClCompile Include="graphics\KsShaderData.cpp" />
+    <ClCompile Include="graphics\KsShaderManager.cpp" />
+    <ClCompile Include="graphics\KsShaderProgram.cpp" />
+    <ClCompile Include="graphics\KsShaderResource.cpp" />
+    <ClCompile Include="graphics\KsStructuredBuffer.cpp" />
+    <ClCompile Include="graphics\KsTexture.cpp" />
+    <ClCompile Include="graphics\KsTextureCollection.cpp" />
+    <ClCompile Include="graphics\KsTextureManager.cpp" />
+    <ClCompile Include="graphics\KsUnorderedAccessView.cpp" />
+    <ClCompile Include="graphics\KsVertexBuffer.cpp" />
+    <ClCompile Include="graphics\KsVertexShader.cpp" />
     <ClCompile Include="math\KsMatrix3x3.cpp" />
     <ClCompile Include="math\KsMatrix4x4.cpp" />
     <ClCompile Include="math\KsQuaternion.cpp" />
@@ -39,8 +157,21 @@
     <ClCompile Include="math\KsVector2d.cpp" />
     <ClCompile Include="math\KsVector3d.cpp" />
     <ClCompile Include="math\KsVector4d.cpp" />
+    <ClCompile Include="memory\KsMemoryFixed.cpp" />
+    <ClCompile Include="memory\KsMemoryFixedBlock.cpp" />
+    <ClCompile Include="task\KsDraw.cpp" />
+    <ClCompile Include="task\KsDrawList.cpp" />
+    <ClCompile Include="task\KsDrawThread.cpp" />
+    <ClCompile Include="task\KsDrawThreadManager.cpp" />
+    <ClCompile Include="task\KsTask.cpp" />
+    <ClCompile Include="task\KsTaskManager.cpp" />
+    <ClCompile Include="task\KsUpdate.cpp" />
+    <ClCompile Include="task\KsUpdateList.cpp" />
+    <ClCompile Include="task\KsUpdateThread.cpp" />
+    <ClCompile Include="task\KsUpdateThreadManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="graphics\KsRect.inl" />
     <None Include="math\KsMatrix3x3.inl" />
     <None Include="math\KsMatrix4x4.inl" />
     <None Include="math\KsPlane.inl" />
@@ -87,7 +218,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\GitHub\Aria\Aria;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -103,6 +234,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

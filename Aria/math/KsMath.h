@@ -35,12 +35,11 @@
 /*===============================================================================================*/
 /*                                 << インクルード >>                                             */
 /*===============================================================================================*/
-#include "KsMathBase.h"
-#include "KsVector.h"
-#include "KsMatrix.h"
-#include "KsQuaternion.h"
-#include "KsTransform.h"
-#include "KsPlane.h"
+#include <math/KsVector.h>
+#include <math/KsMatrix.h>
+#include <math/KsQuaternion.h>
+#include <math/KsTransform.h>
+#include <math/KsPlane.h>
 
 /*===============================================================================================*/
 /*                                     << 定義 >>                                                */
