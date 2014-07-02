@@ -151,6 +151,9 @@ class ksENGINE_API KsQuaternion
 
 		static const KsQuaternion		IDENTITY;
 
+    public:
+        static KsQuaternion             Lerp( const KsQuaternion& refSrc, const KsQuaternion& refDest, KsReal t );
+
 };
 
 

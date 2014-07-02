@@ -72,5 +72,18 @@ KsVector4d KsVector4d::MultiplyAdd( const KsVector4d& V1, const KsVector4d& V2, 
 	return ret;
 }
 
+/************************************************************************************************/
+/*
+ * 線形補間を行います。
+ * @param   V1      ベクトル1
+ * @param   V2      ベクトル2
+ * @param   amount  V2 の重みを示す 0.0f ～ 1.0f の範囲の値。
+ * @return          2 つのベクトルを線形補間したベクトル
+ */
+/************************************************************************************************/
+KsVector4d KsVector4d::Lerp( const KsVector4d& V1, const KsVector4d& V2, KsReal amount )
+{
+	return V1 + (V2 - V1) * amount;
+}
 
 ksNS_KS_END

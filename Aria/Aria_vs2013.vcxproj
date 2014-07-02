@@ -11,6 +11,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animation\KsAnimation.h" />
+    <ClInclude Include="animation\KsAnimationChannel.h" />
+    <ClInclude Include="animation\KsAnimationCommon.h" />
+    <ClInclude Include="animation\KsAnimationController.h" />
+    <ClInclude Include="animation\KsAnimationUtil.h" />
+    <ClInclude Include="animation\KsBlendController.h" />
+    <ClInclude Include="animation\KsBonePose.h" />
+    <ClInclude Include="animation\KsIAnimationController.h" />
+    <ClInclude Include="animation\KsIAttachable.h" />
+    <ClInclude Include="animation\KsInterpolationController.h" />
+    <ClInclude Include="animation\KsKeyFrame.h" />
+    <ClInclude Include="animation\KsKeyFrameCollection.h" />
+    <ClInclude Include="animation\KsSkeleton.h" />
+    <ClInclude Include="collision\KsBoundingSphere.h" />
+    <ClInclude Include="collision\KsCollisionCommon.h" />
     <ClInclude Include="core\KsArray.h" />
     <ClInclude Include="core\KsBezier.h" />
     <ClInclude Include="core\KsCore.h" />
@@ -96,6 +111,16 @@
     <ClInclude Include="memory\KsMemoryFixed.h" />
     <ClInclude Include="memory\KsMemoryFixedBlock.h" />
     <ClInclude Include="memory\KsMemoryFixedUnit.h" />
+    <ClInclude Include="model\KsBone.h" />
+    <ClInclude Include="model\KsBoneCollection.h" />
+    <ClInclude Include="model\KsMesh.h" />
+    <ClInclude Include="model\KsMeshCollection.h" />
+    <ClInclude Include="model\KsMeshPart.h" />
+    <ClInclude Include="model\KsMeshPartCollection.h" />
+    <ClInclude Include="model\KsModel.h" />
+    <ClInclude Include="model\KsModelCommon.h" />
+    <ClInclude Include="model\KsModelLoader.h" />
+    <ClInclude Include="model\KsModelParameter.h" />
     <ClInclude Include="task\KsDraw.h" />
     <ClInclude Include="task\KsDrawList.h" />
     <ClInclude Include="task\KsDrawThread.h" />
@@ -111,6 +136,19 @@
     <ClInclude Include="thread\KsThreadCommon.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="animation\KsAnimation.cpp" />
+    <ClCompile Include="animation\KsAnimationChannel.cpp" />
+    <ClCompile Include="animation\KsAnimationController.cpp" />
+    <ClCompile Include="animation\KsAnimationUtil.cpp" />
+    <ClCompile Include="animation\KsBlendController.cpp" />
+    <ClCompile Include="animation\KsBonePose.cpp" />
+    <ClCompile Include="animation\KsIAnimationController.cpp" />
+    <ClCompile Include="animation\KsIAttachable.cpp" />
+    <ClCompile Include="animation\KsInterpolationController.cpp" />
+    <ClCompile Include="animation\KsKeyFrame.cpp" />
+    <ClCompile Include="animation\KsKeyFrameCollection.cpp" />
+    <ClCompile Include="animation\KsSkeleton.cpp" />
+    <ClCompile Include="collision\KsBoundingSphere.cpp" />
     <ClCompile Include="core\KsBezier.cpp" />
     <ClCompile Include="core\KsCrc32.cpp" />
     <ClCompile Include="core\KsMD5.cpp" />
@@ -159,6 +197,14 @@
     <ClCompile Include="math\KsVector4d.cpp" />
     <ClCompile Include="memory\KsMemoryFixed.cpp" />
     <ClCompile Include="memory\KsMemoryFixedBlock.cpp" />
+    <ClCompile Include="model\KsBone.cpp" />
+    <ClCompile Include="model\KsBoneCollection.cpp" />
+    <ClCompile Include="model\KsMesh.cpp" />
+    <ClCompile Include="model\KsMeshCollection.cpp" />
+    <ClCompile Include="model\KsMeshPart.cpp" />
+    <ClCompile Include="model\KsMeshPartCollection.cpp" />
+    <ClCompile Include="model\KsModel.cpp" />
+    <ClCompile Include="model\KsModelLoader.cpp" />
     <ClCompile Include="task\KsDraw.cpp" />
     <ClCompile Include="task\KsDrawList.cpp" />
     <ClCompile Include="task\KsDrawThread.cpp" />

@@ -275,6 +275,26 @@ class ksENGINE_API KsVector2d
 		 * 最小値
 		 */
 		static const KsVector2d			MIN;
+
+
+    public:
+        /**
+         * 最初の2つのベクトルの積を、3 番目のベクトルに加算します。
+         * @param   V1      ベクトル1
+         * @param   V2      ベクトル2
+         * @param   V3      ベクトル3
+         * @return          最初の 2 つのベクトルの積を、3 番目のベクトルに加算したベクトル
+         */
+        static KsVector2d MultiplyAdd( const KsVector2d& V1, const KsVector2d& V2, const KsVector2d& V3 );
+
+        /**
+         * 線形補間を行います。
+         * @param   V1      ベクトル1
+         * @param   V2      ベクトル2
+         * @param   amount  V2 の重みを示す 0.0f ～ 1.0f の範囲の値。
+         * @return          2 つのベクトルを線形補間したベクトル
+         */
+        static KsVector2d Lerp( const KsVector2d& V1, const KsVector2d& V2, KsReal amount );
 };
 
 /*************************************************************************************************/

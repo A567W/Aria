@@ -25,6 +25,21 @@
     <Filter Include="Aria\memory">
       <UniqueIdentifier>{3d607b16-040b-45e1-82fd-dd82dabd763c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Aria\model">
+      <UniqueIdentifier>{2a443a52-7e7d-4466-8218-46a2ef25eac4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aria\animation">
+      <UniqueIdentifier>{2f4480d6-8e09-463b-9ee4-7249ef363065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aria\actor">
+      <UniqueIdentifier>{9b57901a-bf4e-4da5-adb7-0bbb93f89fe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aria\ik">
+      <UniqueIdentifier>{d2c306f9-6e45-43db-b13d-17b46ed7fe2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Aria\collision">
+      <UniqueIdentifier>{ba228b64-ba1e-43b3-997a-abcf8999dc1d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KsBase.h">
@@ -321,6 +336,81 @@
     <ClInclude Include="core\KsRandom.h">
       <Filter>Aria\core</Filter>
     </ClInclude>
+    <ClInclude Include="model\KsMesh.h">
+      <Filter>Aria\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\KsMeshCollection.h">
+      <Filter>Aria\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\KsMeshPart.h">
+      <Filter>Aria\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\KsMeshPartCollection.h">
+      <Filter>Aria\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\KsModel.h">
+      <Filter>Aria\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\KsModelLoader.h">
+      <Filter>Aria\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\KsModelParameter.h">
+      <Filter>Aria\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\KsBone.h">
+      <Filter>Aria\model</Filter>
+    </ClInclude>
+    <ClInclude Include="model\KsBoneCollection.h">
+      <Filter>Aria\model</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsBlendController.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsBonePose.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsIAnimationController.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsIAttachable.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsInterpolationController.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsKeyFrame.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsKeyFrameCollection.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsSkeleton.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsAnimation.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsAnimationChannel.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsAnimationController.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsAnimationUtil.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\KsBoundingSphere.h">
+      <Filter>Aria\collision</Filter>
+    </ClInclude>
+    <ClInclude Include="model\KsModelCommon.h">
+      <Filter>Aria\model</Filter>
+    </ClInclude>
+    <ClInclude Include="animation\KsAnimationCommon.h">
+      <Filter>Aria\animation</Filter>
+    </ClInclude>
+    <ClInclude Include="collision\KsCollisionCommon.h">
+      <Filter>Aria\collision</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="math\KsMatrix3x3.cpp">
@@ -496,6 +586,69 @@
     </ClCompile>
     <ClCompile Include="core\KsRandom.cpp">
       <Filter>Aria\core</Filter>
+    </ClCompile>
+    <ClCompile Include="model\KsMesh.cpp">
+      <Filter>Aria\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\KsMeshCollection.cpp">
+      <Filter>Aria\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\KsMeshPart.cpp">
+      <Filter>Aria\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\KsMeshPartCollection.cpp">
+      <Filter>Aria\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\KsModel.cpp">
+      <Filter>Aria\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\KsModelLoader.cpp">
+      <Filter>Aria\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\KsBone.cpp">
+      <Filter>Aria\model</Filter>
+    </ClCompile>
+    <ClCompile Include="model\KsBoneCollection.cpp">
+      <Filter>Aria\model</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsBlendController.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsBonePose.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsIAnimationController.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsIAttachable.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsInterpolationController.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsKeyFrame.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsKeyFrameCollection.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsSkeleton.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsAnimation.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsAnimationChannel.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsAnimationController.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation\KsAnimationUtil.cpp">
+      <Filter>Aria\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="collision\KsBoundingSphere.cpp">
+      <Filter>Aria\collision</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

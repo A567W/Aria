@@ -304,6 +304,97 @@ void KsQuaternion::convertToAxisRotation( KsVector3d* pAxis, KsReal* pAngle )
 	}
 }
 
+/************************************************************************************************/
+// 
+/************************************************************************************************/
+void KsQuaternionSlerp( KsQuaternion* pOut, const KsQuaternion* pSrc, const KsQuaternion* pDest, KsReal t )
+{
+	/* cosÉ∆ = q1ÅEq2  */
+	KsReal		cos = pSrc->x * pDest->x + pSrc->y * pDest->y + pSrc->z * pDest->z + pSrc->w * pDest->w;
+	KsReal		angle;
+
+	if( -1.0f < cos )
+	{
+		if( cos < 1.0 ){
+			angle = KsACos( cos );
+		}
+		else{
+			angle = 0.0f;
+		}
+	}
+	else
+	{
+		angle = ksPI;
+	}
+
+	if( KsFabs( angle ) < 0.001f ){
+		if( pOut != pSrc ){
+			*pOut = *pSrc;
+		}
+		return;
+	}
+
+	KsReal		sin    = KsSin( angle );
+	KsReal		invSin = 1.0f / sin;
+	KsReal		val1   = KsSin( ( 1.0f - t ) * angle ) * invSin;
+	KsReal		val2   = KsSin( t * angle ) * invSin;
+
+	pOut->x = pSrc->x * val1 + pDest->x * val2;
+	pOut->y = pSrc->y * val1 + pDest->y * val2;
+	pOut->z = pSrc->z * val1 + pDest->z * val2;
+	pOut->w = pSrc->w * val1 + pDest->w * val2;
+}
+
+
+/************************************************************************************************/
+// 
+/************************************************************************************************/
+KsQuaternion KsQuaternion::Lerp( const KsQuaternion& refSrc, const KsQuaternion& refDest, KsReal t )
+{
+    KsQuaternion    retQuat;
+
+    /* cosÉ∆ = q1ÅEq2  */
+    KsReal  cos = refSrc.x * refDest.x + refSrc.y * refDest.y + refSrc.z * refDest.z + refSrc.w * refDest.w;
+    KsReal  angle;
+
+    if( -1.0f < cos )
+    {
+        if( cos < 1.0 )
+        {
+            angle = KsACos( cos );
+        }
+        else
+        {
+            angle = 0.0f;
+        }
+    }
+    else
+    {
+        angle = ksPI;
+    }
+
+    if( KsFabs( angle ) < 0.001f )
+    {
+        retQuat = refSrc;
+    }
+    else
+    {
+        KsReal  sin    = KsSin( angle );
+        KsReal  invSin = 1.0f / sin;
+        KsReal  val1   = KsSin( ( 1.0f - t ) * angle ) * invSin;
+        KsReal  val2   = KsSin( t * angle ) * invSin;
+
+        retQuat.x = refSrc.x * val1 + refDest.x * val2;
+        retQuat.y = refSrc.y * val1 + refDest.y * val2;
+        retQuat.z = refSrc.z * val1 + refDest.z * val2;
+        retQuat.w = refSrc.w * val1 + refDest.w * val2;
+    }
+
+    return retQuat; 
+}
+
+
+
 #if 0
 /************************************************************************************************/
 // 
