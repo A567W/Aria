@@ -22,20 +22,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  * 
- * @file	KsThread.h
- * @brief	スレッド
+ * @file	KsWindowsCommon.h
+ * @brief	モデル共通ヘッダー
  * @date	2014/04/12
  * @author	A567W
  * @version	1.0.0
  */
- /************************************************************************************************/
-#ifndef __KSTHREAD_H__
-#define __KSTHREAD_H__
+/************************************************************************************************/
+#ifndef __KSWINDOWSCOMMON_H__
+#define __KSWINDOWSCOMMON_H__
 
 /*==============================================================================================*/
 /*                                 << インクルード >>                                            */
 /*==============================================================================================*/
-#include "KsThreadCommon.h"
+#include <windows.h>
+#include <winnls32.h>
+#include <commctrl.h>
+#include <Shlobj.h>
+
+#include <KsBase.h>
+#include <core/KsString.h>
+#include <core/KsArray.h>
+#include <math/KsMath.h>
+#include <graphics/KsRenderContext.h>
+#include <graphics/KsTextureCollection.h>
+#include <graphics/KsEffect.h>
+#include <graphics/KsEffectCollection.h>
 
 /*==============================================================================================*/
 /*                                     << 定義 >>                                               */
@@ -44,71 +56,8 @@
 /*==============================================================================================*/
 /*                                     << 宣言 >>                                               */
 /*==============================================================================================*/
-ksNS_KS_BEGIN
+
+#endif		/* __KSWINDOWSCOMMON_H__ */
 
 
-/************************************************************************************************/
-/**
- * スレッドプライオリティ
- * @enum	ksTHREAD_PRIORITY_TYPE
- * @author  A567W
- * @since   2003/03/22
- * @version ----/--/--
- */
-/************************************************************************************************/
-enum ksTHREAD_PRIORITY_TYPE
-{
-	ksTHREAD_PRIORITY_TIME_CRITICAL =  15,
-	ksTHREAD_PRIORITY_HIGHEST       =   2,
-	ksTHREAD_PRIORITY_ABOVE_NORMAL  =   1,
-	ksTHREAD_PRIORITY_NORMAL        =   0,
-	ksTHREAD_PRIORITY_BELOW_NORMAL  =  -1,
-	ksTHREAD_PRIORITY_LOWEST        =  -2,
-	ksTHREAD_PRIORITY_IDLE          = -15,
-	ksTHREAD_PRIORITY_FORCE32       =  0x7fffffff
-};
-
-/************************************************************************************************/
-/**
- * KsMutex
- */
-/************************************************************************************************/
-typedef std::mutex		KsMutex;
-
-/************************************************************************************************/
-/**
- * KsThread
- */
-/************************************************************************************************/
-typedef std::thread		KsThread;
-
-/************************************************************************************************/
-/**
- * KsThread
- */
-/************************************************************************************************/
-//#define std::async		KsAsync
-
-
-namespace KsThreadUtil
-{
-    ksINLINE void   setPriority( KsHandle handle, KsInt32 priority )
-    {
-        ::SetThreadPriority( handle, priority );
-    }
-
-    ksINLINE void   setProcessor( KsHandle handle, KsInt32 processorNo )
-    {
-        ::SetProcessAffinityMask( handle, 1 << processorNo );
-    }
-
-    ksINLINE void   yield()
-    {
-        std::this_thread::yield();
-    }
-};
-
-ksNS_KS_END
-
-#endif	/* __KSTHREAD_H__ */
 

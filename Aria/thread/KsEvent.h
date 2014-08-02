@@ -22,15 +22,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  * 
- * @file	KsThread.h
- * @brief	スレッド
+ * @file	KsEvent.h
+ * @brief	スレッドイベント
  * @date	2014/04/12
  * @author	A567W
  * @version	1.0.0
  */
  /************************************************************************************************/
-#ifndef __KSTHREAD_H__
-#define __KSTHREAD_H__
+#ifndef __KSEVENT_H__
+#define __KSEVENT_H__
 
 /*==============================================================================================*/
 /*                                 << インクルード >>                                            */
@@ -46,69 +46,54 @@
 /*==============================================================================================*/
 ksNS_KS_BEGIN
 
-
 /************************************************************************************************/
 /**
- * スレッドプライオリティ
- * @enum	ksTHREAD_PRIORITY_TYPE
- * @author  A567W
- * @since   2003/03/22
- * @version ----/--/--
+ * @class		KsEvent
+ * @brief		スレッドイベント操作
+ * @author		A567W
+ * @date		2004/03/30
  */
 /************************************************************************************************/
-enum ksTHREAD_PRIORITY_TYPE
+class ksENGINE_API KsEvent
 {
-	ksTHREAD_PRIORITY_TIME_CRITICAL =  15,
-	ksTHREAD_PRIORITY_HIGHEST       =   2,
-	ksTHREAD_PRIORITY_ABOVE_NORMAL  =   1,
-	ksTHREAD_PRIORITY_NORMAL        =   0,
-	ksTHREAD_PRIORITY_BELOW_NORMAL  =  -1,
-	ksTHREAD_PRIORITY_LOWEST        =  -2,
-	ksTHREAD_PRIORITY_IDLE          = -15,
-	ksTHREAD_PRIORITY_FORCE32       =  0x7fffffff
-};
+	public:
+		/**
+		 * コンストラクタ
+		 */
+                        KsEvent();
 
-/************************************************************************************************/
-/**
- * KsMutex
- */
-/************************************************************************************************/
-typedef std::mutex		KsMutex;
+		/**
+		 * デストラクタ
+		 */
+                        ~KsEvent();
 
-/************************************************************************************************/
-/**
- * KsThread
- */
-/************************************************************************************************/
-typedef std::thread		KsThread;
+        /**
+         * イベントオブジェクトをシグナル状態にする。
+         * @param	hEvent		イベントオブジェクトを示すハンドル。
+         * @retval	ksTRUE		成功
+         * @retval	ksFALSE		失敗
+         */
+        KsBool          signale();
 
-/************************************************************************************************/
-/**
- * KsThread
- */
-/************************************************************************************************/
-//#define std::async		KsAsync
+        /**
+         * イベントオブジェクトを非シグナル状態にする。
+         * @param	hEvent		イベントオブジェクトを示すハンドル。
+         * @retval	ksTRUE		成功
+         * @retval	ksFALSE		失敗
+         */
+        KsBool          reset();
 
+        /**
+         * 指定されたカーネルオブジェクトがシグナル状態になるか、
+         * 指定された時間が経過するまでスレッドをスリープさせます。
+         */
+        KsUInt32        wait();
 
-namespace KsThreadUtil
-{
-    ksINLINE void   setPriority( KsHandle handle, KsInt32 priority )
-    {
-        ::SetThreadPriority( handle, priority );
-    }
-
-    ksINLINE void   setProcessor( KsHandle handle, KsInt32 processorNo )
-    {
-        ::SetProcessAffinityMask( handle, 1 << processorNo );
-    }
-
-    ksINLINE void   yield()
-    {
-        std::this_thread::yield();
-    }
+	private:
+		KsHandle        m_handle;		/**< イベントハンドル   */
 };
 
 ksNS_KS_END
 
-#endif	/* __KSTHREAD_H__ */
+#endif		/* __KSEVENT_H__ */
 
