@@ -22,20 +22,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  * 
- * @file	KsRenderCmd.h
- * @brief	描画コマンド
+ * @file	KsRasterizerStateCmd.cpp
+ * @brief	ラスタライズステータス描画コマンド
  * @date	2014/04/12
  * @author	A567W
  * @version	1.0.0
  */
- /************************************************************************************************/
-#ifndef __KSRENDERCMD_H__
-#define __KSRENDERCMD_H__
+/************************************************************************************************/
 
 /*==============================================================================================*/
 /*                                 << インクルード >>                                           */
 /*==============================================================================================*/
-#include "../KsCommonGL.h"
+#include "KsRasterizerStateCmd.h"
 
 /*==============================================================================================*/
 /*                                     << 定義 >>                                               */
@@ -46,60 +44,81 @@
 /*==============================================================================================*/
 ksNS_KS_BEGIN
 
-/*************************************************************************************************/
-/**
- * @enum	ksRENDER_CMD_TYPE
- * @brief	描画コマンドタイプ
- */
-/*************************************************************************************************/
-enum ksRENDER_CMD_TYPE
-{
-    ksRENDER_CMD_UNKNOWN = 0,
-    ksRENDER_CMD_CLEARRENDERTARGET,
-    ksRENDER_CMD_CLEARRENDERTARGETS,
-    ksRENDER_CMD_CLEARDEPTHSTENCIL,
-    ksRENDER_CMD_VIEWPORT,
-    ksRENDER_CMD_VIEWPORTS,
-    ksRENDER_CMD_INPUTLAYOUT,
-    ksRENDER_CMD_VERTEXBUFFER,
-    ksRENDER_CMD_INDEXBUFFER,
-    ksRENDER_CMD_VERTEXSHADER,
-    ksRENDER_CMD_PIXELSHADER,
-    ksRENDER_CMD_SHADERRESOURCE,
-    ksRENDER_CMD_SAMPLERSTATE,
-    ksRENDER_CMD_BLENDSTATE,
-    ksRENDER_CMD_RASTERIZERSTATE,
-    ksRENDER_CMD_DEPTHSTENCILSTATE,
-    ksRENDER_CMD_DRAW,
-    ksRENDER_CMD_DRAWINDEX,
-};
-
 
 /************************************************************************************************/
-/**
- * @class		KsRenderCmd
- * @brief		描画コマンド
- * @author		A567W
- * @date		----/--/--
- * @since		----/--/--
- * @note		参照カウンタつき
+/*
+ * KsRasterizerStateの描画コマンドを実行する。
+ * @param   pSrc    ラスタライズ比較用ステート
  */
 /************************************************************************************************/
-class ksENGINE_API KsRenderCmd
+void KsRasterizerStateCmd::execute( KS_RASTERIZER_DESC* pSrc )
 {
-    public:
-        KsUInt32            m_cmd;
-        KsUInt32            m_size;
+    const KS_RASTERIZER_DESC*  pRasterizer = r_cast<KS_RASTERIZER_DESC*>( m_pState->getRenderResource() );
+ 
+    //----------------------------------------------------------
+    // Cull Mode
+    //----------------------------------------------------------
+    switch( pRasterizer->CullMode )
+    {
+        case KS_CULL_NONE:
+            // 両面を描く
+            glDisable( GL_CULL_FACE );
+            break;
+	    case KS_CULL_FRONT:
+            // 裏面のみを描く
+            glEnable( GL_CULL_FACE );
+            glCullFace( GL_FRONT );
+            break;
+	    case KS_CULL_BACK:
+            // 表面のみを描く
+            glEnable( GL_CULL_FACE ); 
+            glCullFace( GL_BACK );
+            break;
+        default:
+            break;
+    }
 
-    public:
-        void                setCmd( KsUInt32 cmd, KsUInt32 size )
-        {
-            m_cmd  = cmd;
-            m_size = size;
-        }
-};
+    //----------------------------------------------------------
+    // Fill Mode
+    //----------------------------------------------------------
+    switch( pRasterizer->FillMode )
+    {
+        case KS_FILL_WIREFRAME:
+            glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
+            break;
+	    case KS_FILL_SOLID:
+            glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
+            break;
+        default:
+            break;
+
+    }
+
+    //----------------------------------------------------------
+    // Bias
+    //----------------------------------------------------------
+    //glEnable(GL_POLYGON_OFFSET_FILL);
+    //glDisable(GL_POLYGON_OFFSET_FILL);
+    //glPolygonOffset( 0.0f, pRasterizer->DepthBias );
+
+    //----------------------------------------------------------
+    // Scissor
+    //----------------------------------------------------------
+    //glScissor( );
+    if( pRasterizer->ScissorEnable )
+    {
+        glEnable( GL_SCISSOR_TEST );
+    }
+    else
+    {
+        glDisable( GL_SCISSOR_TEST );
+    }
+
+    //pRasterizer->DepthClipEnable
+}
+
+
+
 
 ksNS_KS_END
-
-#endif		/* __KSRENDERCMD_H__ */
 

@@ -22,55 +22,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  * 
- * @file	KsCommonGL.h
- * @brief	モデル共通ヘッダー
+ * @file	KsVertexBufferCmd.h
+ * @brief	VertexBufferコマンド
  * @date	2014/04/12
  * @author	A567W
  * @version	1.0.0
  */
 /************************************************************************************************/
-#ifndef __KSCOMMONGL_H__
-#define __KSCOMMONGL_H__
+#ifndef __KSVERTEXBUFFERCMD_H__
+#define __KSVERTEXBUFFERCMD_H__
 
 /*==============================================================================================*/
-/*                                 << インクルード >>                                            */
+/*                                 << インクルード >>                                           */
 /*==============================================================================================*/
-#include <windows.h>
-#include <winnls32.h>
-#include <commctrl.h>
-#include <Shlobj.h>
-
-#include <KsBase.h>
-#include <core/KsString.h>
-#include <core/KsArray.h>
-#include <math/KsMath.h>
-
-#include <file/KsFile.h>
-#include <file/KsFileBuffer.h>
-
-#include <graphics/KsColor.h>
-#include <graphics/KsColorReal.h>
-
-#include <graphics/KsRenderSystem.h>
-#include <graphics/KsRenderContext.h>
-
-#include <graphics/KsBufferManager.h>
-#include <graphics/KsConstantBuffer.h>
-#include <graphics/KsIndexBuffer.h>
-#include <graphics/KsVertexBuffer.h>
-
-#include <graphics/KsTextureCollection.h>
-
-#include <graphics/KsShader.h>
-#include <graphics/KsEffect.h>
-#include <graphics/KsEffectCollection.h>
-
-#include <graphics/KsInputLayoutManager.h>
-
-#include <graphics/KsRenderCommandList.h>
-
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include "KsRenderCmd.h"
 
 /*==============================================================================================*/
 /*                                     << 定義 >>                                               */
@@ -79,8 +44,30 @@
 /*==============================================================================================*/
 /*                                     << 宣言 >>                                               */
 /*==============================================================================================*/
+ksNS_KS_BEGIN
 
-#endif		/* __KSCOMMONGL_H__ */
+/************************************************************************************************/
+/**
+ * @class   KsVertexBufferCmd
+ * @brief   VertexBufferコマンド
+ * @author  A567W
+ * @version 1.0.0
+ */
+/************************************************************************************************/
+class ksENGINE_API KsVertexBufferCmd : public KsRenderCmd
+{
+    public:
+        GLuint              m_vertexBuffer;
+
+    public:
+        /**
+         * 描画ターゲットクリアコマンド実行
+         */
+        void                execute();
+};
 
 
+ksNS_KS_END
+
+#endif		/* __KSVERTEXBUFFERCMD_H__ */
 

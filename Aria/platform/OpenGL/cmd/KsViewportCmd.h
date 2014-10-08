@@ -22,55 +22,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  * 
- * @file	KsCommonGL.h
- * @brief	モデル共通ヘッダー
+ * @file	KsViewportCmd.h
+ * @brief	ビューポートコマンド[GL]
  * @date	2014/04/12
  * @author	A567W
  * @version	1.0.0
  */
-/************************************************************************************************/
-#ifndef __KSCOMMONGL_H__
-#define __KSCOMMONGL_H__
+ /************************************************************************************************/
+#ifndef __KSVIEWPORTCMD_H__
+#define __KSVIEWPORTCMD_H__
 
 /*==============================================================================================*/
-/*                                 << インクルード >>                                            */
+/*                                 << インクルード >>                                           */
 /*==============================================================================================*/
-#include <windows.h>
-#include <winnls32.h>
-#include <commctrl.h>
-#include <Shlobj.h>
-
-#include <KsBase.h>
-#include <core/KsString.h>
-#include <core/KsArray.h>
-#include <math/KsMath.h>
-
-#include <file/KsFile.h>
-#include <file/KsFileBuffer.h>
-
-#include <graphics/KsColor.h>
-#include <graphics/KsColorReal.h>
-
-#include <graphics/KsRenderSystem.h>
-#include <graphics/KsRenderContext.h>
-
-#include <graphics/KsBufferManager.h>
-#include <graphics/KsConstantBuffer.h>
-#include <graphics/KsIndexBuffer.h>
-#include <graphics/KsVertexBuffer.h>
-
-#include <graphics/KsTextureCollection.h>
-
-#include <graphics/KsShader.h>
-#include <graphics/KsEffect.h>
-#include <graphics/KsEffectCollection.h>
-
-#include <graphics/KsInputLayoutManager.h>
-
-#include <graphics/KsRenderCommandList.h>
-
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
+#include "KsRenderCmd.h"
 
 /*==============================================================================================*/
 /*                                     << 定義 >>                                               */
@@ -79,8 +44,31 @@
 /*==============================================================================================*/
 /*                                     << 宣言 >>                                               */
 /*==============================================================================================*/
+ksNS_KS_BEGIN
 
-#endif		/* __KSCOMMONGL_H__ */
+/************************************************************************************************/
+/**
+ * @class		KsViewportCmd
+ * @brief		ビューポートコマンド[GL]
+ * @author		A567W
+ */
+/************************************************************************************************/
+class ksENGINE_API KsViewportCmd : public KsRenderCmd
+{
+    public:
+        KsInt32	        m_x;		/**< X座標		*/
+        KsInt32	        m_y;		/**< Y座標		*/
+        KsInt32	        m_w;		/**< 幅			*/
+        KsInt32	        m_h;		/**< 高さ		*/
+        KsReal          m_minZ;		/**< minZ値		*/
+        KsReal          m_maxZ;		/**< maxZ値		*/
+
+    public:
+        void            execute();
+};
 
 
+ksNS_KS_END
+
+#endif		/* __KSVIEWPORTCMD_H__ */
 
