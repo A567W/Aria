@@ -16,6 +16,7 @@
 /*==============================================================================================*/
 #include "KsGraphicsCommon.h"
 #include "KsShaderProgram.h"
+#include "KsShader.h"
 
 /*==============================================================================================*/
 /*                                     << 定義 >>                                               */
@@ -78,6 +79,14 @@ class ksENGINE_API KsShaderManager : public KsSingleton< KsShaderManager >
 		 * @return						シェーダープログラムのポインタ
 		 */
 		virtual KsShaderProgram*		createFromResource( const KsChar* pFileName, const KsChar* pEntryPoint, ksSHADER_MODEL_TYPE shaderModel, ksSHADER_TYPE shaderType ) = 0;
+
+		/**
+		 * ファイルからシェーダーを生成
+		 * @param	pFileNameVS			Vertex Shader ファイル名
+         * @param	pFileNamePS			Pixel Shader ファイル名
+         * @return                      シェーダー
+		 */
+		virtual KsShader*		        createFromFile( const KsChar* pFileNameVS, const KsChar* pFileNamePS ) = 0;
 
 		/**
 		 * 指定した名前のシェーダーを検索する

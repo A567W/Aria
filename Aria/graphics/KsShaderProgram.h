@@ -82,10 +82,16 @@ class ksENGINE_API KsShaderProgram : public KsRefCounter
 		 */
 		ksSHADER_TYPE				getType() const { return m_type; }
 
+		/**
+		 * シェーダープログラムを取得する
+		 * @return					シェーダープログラム
+		 */
+		virtual KsUInt32			getProgram() { return 0; }
+
 	protected:
 		KsUInt32					m_id;				/**< シェーダーID		*/
 		KsString					m_name;				/**< シェーダー名		*/
-		ksSHADER_TYPE				m_type;				/**< シェーダータイプ		*/
+		ksSHADER_TYPE				m_type;				/**< シェーダータイプ	*/
 };
 
 ksNS_KS_END
