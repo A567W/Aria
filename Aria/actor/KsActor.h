@@ -1,105 +1,126 @@
-/************************************************************************************************/
-/** 
- * @file		KsActor.h
- * @brief		ÉAÉNÉ^Å[ÉIÉuÉWÉFÉNÉg
- * @author		A567W
- * @date		----/--/--
- * @since		----/--/--
- * @version		1.0.0
+Ôªø/*************************************************************************************************/
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2014 A567W
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ * 
+ * @file	KsActor.h
+ * @brief	„Ç¢„ÇØ„Çø„Éº„Ç™„Éñ„Ç∏„Çß„ÇØ„Éà
+ * @date	2014/04/12
+ * @author	A567W
+ * @version	1.0.0
  */
 /************************************************************************************************/
 #ifndef __KSACTOR_H__
 #define __KSACTOR_H__
 
 /*==============================================================================================*/
-/*                                 << ÉCÉìÉNÉãÅ[Éh >>                                            */
+/*                                 << „Ç§„É≥„ÇØ„É´„Éº„Éâ >>                                            */
 /*==============================================================================================*/
 #include "KsActorCommon.h"
 
 /*==============================================================================================*/
-/*                                     << íËã` >>                                               */
+/*                                     << ÂÆöÁæ© >>                                               */
 /*==============================================================================================*/
 
 /*==============================================================================================*/
-/*                                     << êÈåæ >>                                               */
+/*                                     << ÂÆ£Ë®Ä >>                                               */
 /*==============================================================================================*/
 ksNS_KS_BEGIN
 
+
 /************************************************************************************************/
 /**
- * @class		KsActor
- * @brief		ÉAÉNÉ^Å[ÉIÉuÉWÉFÉNÉgÉNÉâÉX
- * @author		A567W
- * @date		----/--/--
- * @since		----/--/--
+ * @class	KsActor
+ * @brief	„Ç¢„ÇØ„Çø„Éº„Ç™„Éñ„Ç∏„Çß„ÇØ„Éà„ÇØ„É©„Çπ
+ * @author	A567W
  */
 /************************************************************************************************/
 class ksENGINE_API KsActor
 {
-	protected:
-		KsModel*					m_pModel;			/**< ÉÇÉfÉãÉfÅ[É^			*/
-		KsSkeleton*					m_pSkeleton;		/**< ÉXÉPÉãÉgÉìÉfÅ[É^		*/
-		KsAnimationController*		m_pCurrentAnim;		/**< åªç›ÇÃÉAÉjÉÅÉfÅ[É^	*/
-		KsHumanIK*					m_pHumanIK;			/**< IKêßå‰ÉfÅ[É^			*/
-		KsPhysicsController*		m_pPhysics;			/**< ï®óùââéZÉfÅ[É^		*/
+    protected:
+        KsModel*                    m_pModel;           /**< „É¢„Éá„É´„Éá„Éº„Çø			*/
+        KsSkeleton*                 m_pSkeleton;        /**< „Çπ„Ç±„É´„Éà„É≥„Éá„Éº„Çø		*/
+        KsAnimationController*      m_pCurrentAnim;     /**< ÁèæÂú®„ÅÆ„Ç¢„Éã„É°„Éá„Éº„Çø	*/
+        KsHumanIK*                  m_pHumanIK;         /**< IKÂà∂Âæ°„Éá„Éº„Çø			*/
+        //KsPhysicsController*        m_pPhysics;   /**< Áâ©ÁêÜÊºîÁÆó„Éá„Éº„Çø		*/
 
-	public:
-		/**
-		 * ÉRÉìÉXÉgÉâÉNÉ^
-		 */
-		KsActor();
+    public:
+        /**
+         * „Ç≥„É≥„Çπ„Éà„É©„ÇØ„Çø
+         */
+        KsActor();
 
-		/**
-		 * ÉRÉìÉXÉgÉâÉNÉ^
-		 */
-		KsActor( KsModel* pModel );
+        /**
+         * „Ç≥„É≥„Çπ„Éà„É©„ÇØ„Çø
+         * @param   pModel		„É¢„Éá„É´
+         */
+        KsActor( KsModel* pModel );
 
-		/**
-		 * ÉfÉXÉgÉâÉNÉ^
-		 */
-		virtual ~KsActor();
+        /**
+         * „Éá„Çπ„Éà„É©„ÇØ„Çø
+         */
+        virtual ~KsActor();
 
-		/**
-		 * çXêVèàóù
-		 * @param	gameTime			çXêVéûä‘
-		 */
-		virtual void update( KsReal gameTime );
+        /**
+         * Êõ¥Êñ∞Âá¶ÁêÜ
+         * @param   gameTime    Êõ¥Êñ∞ÊôÇÈñì
+         */
+        virtual void update( KsReal gameTime );
 
-		/**
-		 * ï`âÊèàóù
-		 * @param	pRenderContext		ï`âÊÉRÉìÉeÉLÉXÉg
-		 */
-		virtual void draw( KsRenderContext* pRenderContext );
-
-		/**
-		 * ÉAÉjÉÅÅ[ÉVÉáÉìÇÉZÉbÉgÇ∑ÇÈ
-		 * @param	pCurrentAnim		ÉAÉjÉÅÅ[ÉVÉáÉì
-		 */
-		void setAnimation( KsAnimationController* pCurrentAnim );
+        /**
+         * ÊèèÁîªÂá¶ÁêÜ
+         * @param   pRenderContext  ÊèèÁîª„Ç≥„É≥„ÉÜ„Ç≠„Çπ„Éà
+         */
+        virtual void draw( KsRenderContext* pRenderContext );
 
 		/**
-		 * ÉAÉjÉÅÅ[ÉVÉáÉìÇÉZÉbÉgÇ∑ÇÈ
-		 * @return		åªç›ÇÃÉAÉjÉÅÅ[ÉVÉáÉì
-		 */
-		KsAnimationController* getAnimation() { return m_pCurrentAnim; }
+         * „Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥„Çí„Çª„ÉÉ„Éà„Åô„Çã
+         * @param   pCurrentAnim    „Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥
+         */
+        void setAnimation( KsAnimationController* pCurrentAnim );
 
 		/**
-		 * ÉÇÉfÉãÉfÅ[É^ÇéÊìæÇ∑ÇÈ
-		 * @return		ÉÇÉfÉãÉfÅ[É^
-		 */
-		KsModel*		getModel() { return m_pModel; }
+         * „Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥„Çí„Çª„ÉÉ„Éà„Åô„Çã
+         * @return  ÁèæÂú®„ÅÆ„Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥
+         */
+        KsAnimationController* getAnimation() { return m_pCurrentAnim; }
 
-		/**
-		 * IKÇÉZÉbÉgÇ∑ÇÈ
-		 * @param	pHumanIK			IK
-		 */
-		void setHumanIK( KsHumanIK* pHumanIK );
+        /**
+         * „É¢„Éá„É´„Éá„Éº„Çø„ÇíÂèñÂæó„Åô„Çã
+         * @return  „É¢„Éá„É´„Éá„Éº„Çø
+         */
+        KsModel*    getModel() { return m_pModel; }
 
-		/**
-		 * ï®óùââéZÉfÅ[É^ÇÉZÉbÉgÇ∑ÇÈ
-		 * @param	pPhysics			ï®óùââéZÉfÅ[É^
-		 */
-		void setPhysics( KsPhysicsController* pPhysics );
+        /**
+         * IK„Çí„Çª„ÉÉ„Éà„Åô„Çã
+         * @param	pHumanIK    IK
+         */
+        void setHumanIK( KsHumanIK* pHumanIK );
+
+        /**
+         * Áâ©ÁêÜÊºîÁÆó„Éá„Éº„Çø„Çí„Çª„ÉÉ„Éà„Åô„Çã
+         * @param	pPhysics    Áâ©ÁêÜÊºîÁÆó„Éá„Éº„Çø
+         */
+        //void setPhysics( KsPhysicsController* pPhysics );
 };
 
 ksNS_KS_END

@@ -1,31 +1,52 @@
-/************************************************************************************************/
-/** 
- * @file		KsActor.cpp
- * @brief		ÉAÉNÉ^Å[
- * @author		A567W
- * @date		----/--/--
- * @since		----/--/--
- * @version		1.0.0
+Ôªø/*************************************************************************************************/
+/**
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2014 A567W
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ * 
+ * @file	KsActor.cpp
+ * @brief	„Ç¢„ÇØ„Çø„Éº„Ç™„Éñ„Ç∏„Çß„ÇØ„Éà
+ * @date	2014/04/12
+ * @author	A567W
+ * @version	1.0.0
  */
 /************************************************************************************************/
 
 /*==============================================================================================*/
-/*                                 << ÉCÉìÉNÉãÅ[Éh >>                                            */
+/*                                 << „Ç§„É≥„ÇØ„É´„Éº„Éâ >>                                            */
 /*==============================================================================================*/
 #include "KsActor.h"
 
 /*==============================================================================================*/
-/*                                     << íËã` >>                                               */
+/*                                     << ÂÆöÁæ© >>                                               */
 /*==============================================================================================*/
 
 /*==============================================================================================*/
-/*                                     << êÈåæ >>                                               */
+/*                                     << ÂÆ£Ë®Ä >>                                               */
 /*==============================================================================================*/
 ksNS_KS_BEGIN
 
 /************************************************************************************************/
 /**
- * ÉRÉìÉXÉgÉâÉNÉ^
+ * „Ç≥„É≥„Çπ„Éà„É©„ÇØ„Çø
  */
 /************************************************************************************************/
 KsActor::KsActor()
@@ -33,13 +54,13 @@ KsActor::KsActor()
 	, m_pSkeleton( 0 )
 	, m_pCurrentAnim( 0 )
 	, m_pHumanIK( 0 )
-	, m_pPhysics( 0 )
+	//, m_pPhysics( 0 )
 {
 }
 
 /************************************************************************************************/
 /**
- * ÉRÉìÉXÉgÉâÉNÉ^
+ * „Ç≥„É≥„Çπ„Éà„É©„ÇØ„Çø
  */
 /************************************************************************************************/
 KsActor::KsActor( KsModel* pModel )
@@ -47,24 +68,24 @@ KsActor::KsActor( KsModel* pModel )
 	, m_pSkeleton( 0 )
 	, m_pCurrentAnim( 0 )
 	, m_pHumanIK( 0 )
-	, m_pPhysics( 0 )
+	//, m_pPhysics( 0 )
 {
 	pModel->updateBoneMatrix();
 	pModel->updateWorldMatrix();
 
-	m_pSkeleton = new KsSkeleton( pModel );
+	m_pSkeleton = ksNew KsSkeleton( pModel );
 
 	//m_humanIK      = KsHumanIK.FromModel( model );
 }
 
 /************************************************************************************************/
 /*
- * ÉfÉXÉgÉâÉNÉ^
+ * „Éá„Çπ„Éà„É©„ÇØ„Çø
  */
 /************************************************************************************************/
 KsActor::~KsActor()
 {
-	ksDELETE( m_pPhysics );
+	//ksDELETE( m_pPhysics );
 	ksDELETE( m_pHumanIK );
 	ksDELETE( m_pSkeleton );
 }
@@ -76,7 +97,7 @@ KsActor::~KsActor()
 /************************************************************************************************/
 void KsActor::update( KsReal gameTime )
 {
-	// ÉAÉjÉÅÅ[ÉVÉáÉìÇçXêVÇ∑ÇÈ
+	// „Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥„ÇíÊõ¥Êñ∞„Åô„Çã
 	if( NULL != m_pCurrentAnim )
 	{
 		m_pCurrentAnim->update( 1.0f );
@@ -89,22 +110,24 @@ void KsActor::update( KsReal gameTime )
 		}
 	}
 
-	// É{Å[ÉìèÓïÒÇçXêVÇ∑ÇÈ
+	// „Éú„Éº„É≥ÊÉÖÂ†±„ÇíÊõ¥Êñ∞„Åô„Çã
 	//m_pSkeleton->update( gameTime );
 
-	// ÉÇÉfÉãópéñÇÃçXêVÇ∑ÇÈ
+	// „É¢„Éá„É´Áî®‰∫ã„ÅÆÊõ¥Êñ∞„Åô„Çã
 	m_pModel->update();
 
-	// ï®óùåvéZèàóùÇîΩâfÇ∑ÇÈ
+#if 0
+	// Áâ©ÁêÜË®àÁÆóÂá¶ÁêÜ„ÇíÂèçÊò†„Åô„Çã
 	if( NULL != m_pPhysics )
 	{
 		m_pPhysics->update( gameTime );
 	}
+#endif
 
-	// É}ÉgÉäÉbÉNÉXçXêV
+	// „Éû„Éà„É™„ÉÉ„ÇØ„ÇπÊõ¥Êñ∞
 	m_pModel->updateSkinMatrix();
 
-	// IKçXêV
+	// IKÊõ¥Êñ∞
 	if( NULL != m_pHumanIK )
 	{
 		m_pHumanIK->update();
@@ -139,25 +162,26 @@ void KsActor::setAnimation( KsAnimationController* pCurrentAnim )
 
 /************************************************************************************************/
 /*
- * IKÉfÅ[É^ÇÉZÉbÉgÇ∑ÇÈ
- * @param	pHumanIK			IKÉfÅ[É^
+ * IK„Éá„Éº„Çø„Çí„Çª„ÉÉ„Éà„Åô„Çã
+ * @param	pHumanIK			IK„Éá„Éº„Çø
  */
 /************************************************************************************************/
 void KsActor::setHumanIK( KsHumanIK* pHumanIK )
 {
 	m_pHumanIK = pHumanIK;
 }
-
+#if 0
 /************************************************************************************************/
 /*
- * ï®óùââéZÉfÅ[É^ÇÉZÉbÉgÇ∑ÇÈ
- * @param	pPhysics			ï®óùââéZÉfÅ[É^
+ * Áâ©ÁêÜÊºîÁÆó„Éá„Éº„Çø„Çí„Çª„ÉÉ„Éà„Åô„Çã
+ * @param	pPhysics			Áâ©ÁêÜÊºîÁÆó„Éá„Éº„Çø
  */
 /************************************************************************************************/
 void KsActor::setPhysics( KsPhysicsController* pPhysics )
 {
 	m_pPhysics = pPhysics;
 }
+#endif
 
 ksNS_KS_END
 
